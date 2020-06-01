@@ -13,8 +13,12 @@
 
 <style lang="stylus">
 #app {
+  height:100vh
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 }
+
+#nav{
+  font-size:3rem
+  }
 </style>

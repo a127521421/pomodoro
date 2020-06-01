@@ -55,6 +55,24 @@ export default new Vuex.Store({
     editTodo (state, data) {
       state.todos[data].edit = !state.todos[data].edit
     },
+    editUp (state, data) {
+      const num1 = state.todos[data - 1]
+      if (data === 0) {
+        alert('無法往上了')
+      } else {
+        state.todos.splice(data - 1, 1)
+        state.todos.splice(data, 0, num1)
+      }
+    },
+    editDown (state, data) {
+      const num2 = state.todos[data + 1]
+      if (data + 1 === state.todos.length) {
+        alert('無法往下了')
+      } else {
+        state.todos.splice(data + 1, 1)
+        state.todos.splice(data, 0, num2)
+      }
+    },
     cancelTodo (state, data) {
       state.todos[data].edit = false
       state.todos[data].model = state.todos[data].name

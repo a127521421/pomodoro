@@ -3,7 +3,8 @@
     <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
       <template v-slot:cell(preview)="data">
         <!-- controls可以直接寫 -->
-        <audio controls :src="'./alarms/'+data.item.file"></audio>
+        <!-- <audio :src="'./alarms/'+data.item.file"></audio> -->
+        <button @click="Play(data.item.file)"><font-awesome-icon :icon="['fas', 'play']" ></font-awesome-icon></button>
       </template>
       <template v-slot:cell(select)="data">
         <font-awesome-icon v-if="data.item.file == alarm" :icon="['fas', 'check']"></font-awesome-icon>
@@ -51,6 +52,11 @@ export default {
   methods: {
     selectAlarm (item) {
       this.$store.commit('selectAlarm', item.file)
+    },
+    Play (x) {
+      const pla = new Audio()
+      pla.src = `./alarms/${x}`
+      pla.play()
     }
   }
 }
