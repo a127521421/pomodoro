@@ -9,7 +9,7 @@ import store from './store'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faAngleUp, faAngleDown, faEthernet, faBars, faCog } from '@fortawesome/free-solid-svg-icons'
 
 import draggable from 'vuedraggable'
 
@@ -22,7 +22,7 @@ Vue.use(VueGtag, {
   config: { id: 'UA-168191790-1' }
 })
 
-library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faAngleUp, faAngleDown)
+library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faAngleUp, faAngleDown, faEthernet, faBars, faCog)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('draggable', draggable)

@@ -53,9 +53,9 @@ export default {
     selectAlarm (item) {
       this.$store.commit('selectAlarm', item.file)
     },
-    Play (x) {
+    Play () {
       const pla = new Audio()
-      pla.src = `./alarms/${x}`
+      pla.src = './alarms/data.item.file'
       pla.play()
     }
   }

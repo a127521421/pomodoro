@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
   name: 'list',
   data () {
@@ -67,6 +69,10 @@ export default {
     addTodo () {
       this.$store.commit('addTodo', this.newtodo)
       this.newtodo = ''
+      Swal.fire({
+        icon: 'success',
+        text: '成功'
+      })
     },
     delTodo (index) {
       this.$store.commit('delTodo', index)

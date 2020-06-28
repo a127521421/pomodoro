@@ -14,7 +14,18 @@
   </div>
 </template>
 
+<style>
+  h1{
+    font-size: 3rem;
+  }
+
+  h2{
+    font-size: 2.5rem;
+  }
+</style>
+
 <script>
+import Swal from 'sweetalert2'
 
 export default {
   name: 'Home',
@@ -88,7 +99,7 @@ export default {
       if (this.todos.length > 0) {
         this.start()
       } else {
-        alert('結束')
+        Swal.fire('結束')
       }
     },
     pause () {
