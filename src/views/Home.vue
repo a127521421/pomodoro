@@ -1,28 +1,20 @@
 <template>
   <div class="home">
-    <h1>{{ currentText }}</h1>
-    <h2>{{timetext}}</h2>
-    <b-btn variant="primary" class="mr-3" v-if="status != 1" @click="start">
+    <div class="background">
+      <h2>{{ currentText }}</h2>
+      <h3>{{timetext}}</h3>
+    </div>
+    <b-btn class="btn-secondary" v-if="status != 1" @click="start">
       <font-awesome-icon :icon="['fas', 'play']" ></font-awesome-icon>
     </b-btn>
-    <b-btn variant="primary"  class="mr-3" v-if="status == 1" @click="pause">
+    <b-btn class="btn-secondary" v-if="status == 1" @click="pause">
       <font-awesome-icon :icon="['fas', 'pause']" ></font-awesome-icon>
     </b-btn>
-    <b-btn variant="primary"  v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
+    <b-btn class="ml-3 btn-secondary" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
       <font-awesome-icon :icon="['fas', 'step-forward']"></font-awesome-icon>
     </b-btn>
   </div>
 </template>
-
-<style>
-  h1{
-    font-size: 3rem;
-  }
-
-  h2{
-    font-size: 2.5rem;
-  }
-</style>
 
 <script>
 import Swal from 'sweetalert2'

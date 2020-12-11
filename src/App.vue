@@ -1,22 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/"><font-awesome-icon :icon="['fas', 'ethernet']"></font-awesome-icon></router-link>
-      <router-link to="/list"><font-awesome-icon :icon="['fas', 'bars']"></font-awesome-icon></router-link>
-      <router-link to="/settings"><font-awesome-icon :icon="['fas', 'cog']"></font-awesome-icon></router-link>
+    <div class="container">
+      <keep-alive >
+        <router-view id="main" />
+      </keep-alive>
+      <div id="nav">
+        <router-link to="/" class="button"><font-awesome-icon :icon="['fas', 'ethernet']"></font-awesome-icon></router-link>
+        <router-link to="/list" class="button"><font-awesome-icon :icon="['fas', 'bars']"></font-awesome-icon></router-link>
+        <router-link to="/settings" class="button"><font-awesome-icon :icon="['fas', 'cog']"></font-awesome-icon></router-link>
+      </div>
     </div>
-    <keep-alive >
-      <router-view id="main" />
-    </keep-alive>
   </div>
 </template>
 
 <style lang="stylus">
 #app {
-  height:100vh
+  height:auto
   text-align: center;
-  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 }
+
+#app .container {
+  max-width: 375px;
+  margin: 10px auto;
+  border: 1px solid  #FFCC22;
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  font-family: "Nunito","Noto Sans TC", sans-serif;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  }
 
 #main{
   position relative
@@ -28,6 +40,6 @@
   position:relative;
   top: 90%;
   display:flex;
-  justify-content:space-around;
+  justify-content:space-between;
   }
 </style>
